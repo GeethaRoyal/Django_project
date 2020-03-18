@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- DATA TABLE -->
+        <h2 class="heading-title m-b-35">{{ lsit.fname }} {{lsit.lname }}</h2>
+        <div>
+            <img src="{{ lsit.image }}" height="300" width="300">
+        </div>
+        <div>
+            <p class="director-note">
+                {{ lsit.describe }}
+            </p>
+        </div>
+
+        <h3 class="title-5 m-b-45">Movies</h3>
+        <div class="table-responsive table-responsive-data2">
+            <table class="table table-data2">
+                <thead>
+                <tr>
+                    <th>Movie id</th>
+                    <th>Name</th>
+                    <th>Release Date</th>
+                    <th>Average Rating</th>
+                    <th>Collections(in Crores.)</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for data in movies_list %}
+                <tr class="tr-shadow">
+                    <td>{{ data.id }}</td>
+                    <td class="desc">
+                        <a href="/imdb/movie/{{ data.id }}/">{{ data.name }}</a>
+                    </td>
+                    <td>{{ data.release_date }}</td>
+                    <td>
+                        <span class="status--high">{{data.avg_rate }}</span>
+                    </td>
+                    <td>{{ data.collections }}₹</td>
+                </tr>
+                {% endfor %}
+                <tr class="spacer"></tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- END DATA TABLE -->
+    </div>
+</div>
+
+{% endblock %}
