@@ -7,7 +7,7 @@
         <!-- DATA TABLE -->
         <h2 class="heading-title m-b-35">{{ lsit.name }} </h2>
         <div>
-            <img src="{{ lsit.image }}" height="500" width="300" >
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fbookpeopleteens.files.wordpress.com%2F2014%2F04%2Fdivergent-movie-poster.jpg&f=1&nofb=1" height="500" width="300" >
         </div>
         <div>
             <p class="director-note">
@@ -29,7 +29,7 @@
                 <tbody>
                 {% for data in movies_list %}
                 <tr class="tr-shadow">
-                    <td>{{ data.actor.id }}</td>
+                    <td>{{ data.actor.actor_id }}</td>
                     <td >
                         <a href="/imdb/actor/{{ data.actor.actor_id }}/">{{ data.actor.name }}</a>
                     </td>

@@ -8,7 +8,7 @@ def home(request):
     return render(request,'imdb_home.html',otp)
 
 def movie(request,movie_id):
-    list_of_actors = Cast.objects.filter(movie__movie_id=movie_id)
+    list_of_actors = Cast.objects.filter(movie_id=movie_id)
     otp={'movies_list':list_of_actors}
     act= Movie.objects.get(movie_id=movie_id)
     ac = {'lsit':act}
@@ -32,16 +32,14 @@ def director(request,director_id):
     return render(request,'imdb_director.html',otp)
 
 def analytics(request):
-    data1=get_one_bar_plot_data()
-    data=get_multi_line_plot_data()
-    data4=get_two_bar_plot_data()
-    data6=get_polar_chart_data()
-    data5=get_area_plot_data()
-    data3=get_pie_chart_data()
+    data=get_one_bar_plot_data()
+    data1=get_multi_line_plot_data()
+    data2=get_two_bar_plot_data()
+    data3=get_area_plot_data()
+    data4=get_pie_chart_data()
     data.update(data1)
+    data.update(data2)
     data.update(data3)
     data.update(data4)
-    data.update(data5)
-    data.update(data6)
     return render(request,'analytics.html',context=data)
 

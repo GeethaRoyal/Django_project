@@ -6,13 +6,12 @@
 <div class="row">
     <div class="col-md-12">
         <!-- DATA TABLE -->
-        <h2 class="heading-title m-b-35">{{ lsit.fname }} {{lsit.lname }}</h2>
+        <h2 class="heading-title m-b-35">{{ lsit.name }}</h2>
         <div>
-            <img src="{{ lsit.image }}" height="300" width="300">
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.S0tHAtiKThvnQQG5hu2JywHaLG%26pid%3DApi&f=1" height="300" width="300">
         </div>
         <div>
             <p class="director-note">
-                {{ lsit.describe }}
             </p>
         </div>
 
@@ -21,7 +20,6 @@
             <table class="table table-data2">
                 <thead>
                 <tr>
-                    <th>Movie id</th>
                     <th>Name</th>
                     <th>Release Date</th>
                     <th>Average Rating</th>
@@ -32,11 +30,10 @@
                 <tbody>
                 {% for data in movies_list %}
                 <tr class="tr-shadow">
-                    <td>{{ data.id }}</td>
                     <td class="desc">
-                        <a href="/imdb/movie/{{ data.id }}/">{{ data.name }}</a>
+                        <a href="/imdb/movie/{{ data.movie_id }}/">{{ data.name }}</a>
                     </td>
-                    <td>{{ data.release_date }}</td>
+                    <td>{{ data.year_of_release }}</td>
                     <td>
                         <span class="status--high">{{data.avg_rate }}</span>
                     </td>

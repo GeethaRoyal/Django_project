@@ -11,28 +11,30 @@
             <table class="table table-data2">
                 <thead>
                 <tr>
-                    <th>Movie id</th>
+                    <!-- <th>Movie id</th> -->
                     <th>Name</th>
                     <th>Director</th>
                     <th>Release Date</th>
+                    <th>language</th>
                     <th>Average Rating</th>
                     <th>Genre</th>
                     <th>Collections(in Crores.)</th>
-                    <th></th>
+                    
                 </tr>
                 </thead>
                 <tbody>
                 {%if list_of_movies %}
                 {% for item in list_of_movies %}
                 <tr class="tr-shadow">
-                    <td>{{ item.id }}</td>
+                    <!-- <td>{{ item.movie_id }}</td> -->
                     <td class="desc">
-                        <a href="/imdb/movie/{{ item.id }}/">{{ item.name }}</a>
+                        <a href="/imdb/movie/{{ item.movie_id }}/">{{ item.name }}</a>
                     </td>
                     <td class="desc">
-                        <a href="/imdb/director/{{ item.director.id }}/">{{ item.director.fname }} {{ item.director.lname }}</a>
+                        <a href="/imdb/director/{{ item.director.id }}/">{{ item.director.name }}</a>
                     </td>
-                    <td>{{ item.release_date }}</td>
+                    <td>{{ item.year_of_release }}</td>
+                    <td> {{ item.language}}</td>
                     <td>
                         <span class="status--high">{{ item.avg_rate }}</span>
                     </td>

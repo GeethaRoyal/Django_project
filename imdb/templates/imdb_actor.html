@@ -6,13 +6,12 @@
 <div class="row">
     <div class="col-md-12">
         <!-- DATA TABLE -->
-        <h2 class="heading-title m-b-35">{{ lsit.fname }} {{ lsit.lname }}</h2>
+        <h2 class="heading-title m-b-35">{{ lsit.name }}</h2>
         <div>
-            <img src=" {{ lsit.image }}" height="500" width="300" >
+            <img src=" https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fi2.cdnds.net%2F13%2F29%2F618x928%2Fmovies-divergent-shailene-woodley-tris.jpg&f=1&nofb=1" height="500" width="300" >
         </div>
         <div>
             <p class="director-note">
-                {{ lsit.describe }}
             </p>
         </div>
 
@@ -25,19 +24,19 @@
                     <th>Name</th>
                     <th>Release Date</th>
                     <th>Average Rating</th>
+                    <th>Genre</th>
                     <th>Collections(in Crores.)</th>
-                    <th></th>
                 </tr>
                 </thead>
                 <tbody>
                 {% if movies_list %}
                 {% for data in movies_list %}
                 <tr class="tr-shadow">
-                    <td>{{ data.id }}</td>
+                    <td>{{ data.movie_id }}</td>
                     <td class="desc">
-                        <a href="/imdb/movie/{{ data.id }}/">{{ data.name }}</a>
+                        <a href="/imdb/movie/{{ data.movie_id }}/">{{ data.name }}</a>
                     </td>
-                    <td>{{ data.release_date }}</td>
+                    <td>{{ data.year_of_release }}</td>
                     <td>
                         <span class="status--high">{{ data.avg_rate }}</span>
                     </td>
